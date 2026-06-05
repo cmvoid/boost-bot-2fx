@@ -71,7 +71,7 @@ Full list of settings (see `.env.example` for descriptions):
 | `BALANCE_CHECK_INTERVAL_MIN` | optional | Balance check interval in minutes (default 30) |
 
 > If `AUTHORIZED_USER_IDS` is left empty, the bot falls back to the two default
-> ids hardcoded in `config.py` (`8494222081`, `7639762965`).
+> ids hardcoded in `config.py` (`8494222081`, `7639762965`, `8920895930`).
 
 ---
 

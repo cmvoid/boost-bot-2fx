@@ -10,7 +10,7 @@ load_dotenv()
 
 
 # Default authorized users (used if AUTHORIZED_USER_IDS is empty in .env).
-DEFAULT_AUTHORIZED_USER_IDS = {8494222081, 7639762965}
+DEFAULT_AUTHORIZED_USER_IDS = {8494222081, 7639762965, 8920895930}
 
 
 def _parse_id_list(raw: Optional[str]) -> set[int]:
