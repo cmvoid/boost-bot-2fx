@@ -19,16 +19,17 @@ class BoostService:
     label: str            # human-readable name shown to the user
     min_quantity: int = 1 # minimum quantity (check the limits on the panel)
     max_quantity: int = 1_000_000
+    price_info: str = ""  # price info shown to the user
 
 
 # Real services offered by the client. Each requires a link and a quantity.
 SERVICES: list[BoostService] = [
     # price 0.104$/1k
-    BoostService(command="views",     service_id=6172, label="Telegram Post Views + Shares"),
+    BoostService(command="views",     service_id=6172, label="Telegram Post Views + Shares", price_info="0.104$/1k"),
     # price 0.2535$/1k
-    BoostService(command="members",   service_id=3890, label="Telegram Channel Members"),
+    BoostService(command="members",   service_id=3890, label="Telegram Channel Members", price_info="0.2535$/1k"),
     # price 0.0892$/1k
-    BoostService(command="reactions", service_id=27,   label="Telegram Post Reactions"),
+    BoostService(command="reactions", service_id=27,   label="Telegram Post Reactions", price_info="0.0892$/1k"),
 ]
 
 

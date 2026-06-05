@@ -120,8 +120,9 @@ async def cmd_services(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
     lines = ["<b>Available services</b>", ""]
     for s in SERVICES:
         configured = "" if s.service_id else "  ⚠️ <i>service_id not set</i>"
+        price_str = f" ({s.price_info})" if s.price_info else ""
         lines.append(
-            f"• /{s.command} — {html.escape(s.label)}{configured}\n"
+            f"• /{s.command} — {html.escape(s.label)}{price_str}{configured}\n"
             f"   usage: <code>/{s.command} &lt;link&gt; &lt;quantity&gt;</code>"
         )
     await update.effective_message.reply_text("\n".join(lines), parse_mode=ParseMode.HTML)
@@ -358,7 +359,8 @@ def _help_text() -> str:
         "<b>Service commands:</b>",
     ]
     for s in SERVICES:
-        lines.append(f"• <code>/{s.command} &lt;link&gt; &lt;quantity&gt;</code> — {html.escape(s.label)}")
+        price_str = f" ({s.price_info})" if s.price_info else ""
+        lines.append(f"• <code>/{s.command} &lt;link&gt; &lt;quantity&gt;</code> — {html.escape(s.label)}{price_str}")
     lines += [
         "",
         "<b>Other commands:</b>",
